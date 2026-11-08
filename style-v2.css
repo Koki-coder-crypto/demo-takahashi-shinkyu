@@ -1,0 +1,215 @@
+/* demo-site-18 たかはし鍼灸接骨院+Rebody — style-v2.css (2026-11-08 全面刷新)
+   コンセプト: スポーツ臨床カルテ型。紺 #14304D × 橙 #C2410C、白基調の臨床記録レイアウト。
+   フォントは Noto Sans JP 500/700/900 のみ。角丸0。英字ラベルなし。 */
+:root{
+  --bg:#F2F4F1; --paper:#FFFFFF; --ink:#16202B; --muted:#4A5560;
+  --main:#14304D; --main-d:#0D2238; --cta:#C2410C; --cta-d:#9A3409;
+  --line:#14304D; --line-soft:#C9D2D8; --panel:#E8EDF0; --panel2:#FFF3E8;
+  --s1:8px;--s2:16px;--s3:24px;--s4:32px;--s5:40px;--s6:48px;--s8:64px;--s12:96px;
+  --container:1160px;
+}
+*,*::before,*::after{box-sizing:border-box;border-radius:0}
+html{-webkit-text-size-adjust:100%;scroll-padding-top:16px}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:"Noto Sans JP",sans-serif;font-weight:500;font-size:16px;line-height:1.85;padding-bottom:64px}
+h1,h2,h3,h4,p,ul,ol,dl,dd,figure{margin:0}
+ul,ol{padding:0;list-style:none}
+img{display:block;max-width:100%;height:auto}
+b,strong,th{font-weight:700}
+a{color:var(--main);text-underline-offset:3px}
+a:focus-visible,button:focus-visible{outline:3px solid #0B57D0;outline-offset:3px}
+.container{width:min(var(--container),calc(100% - 40px));margin-inline:auto}
+.num{font-variant-numeric:tabular-nums;font-weight:900;letter-spacing:.01em}
+.sr-only{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+.note{font-size:14px;line-height:1.8;color:var(--muted)}
+.lead{margin-bottom:var(--s3);max-width:44em}
+
+/* デモバナー */
+.demo-banner{background:#000;color:#fff;font-size:13px;font-weight:700;line-height:1.6;padding:var(--s1) 16px;text-align:center}
+
+/* ヘッダー: 紺の帯 */
+.site-header{background:var(--main-d);color:#fff}
+.header-inner{display:flex;flex-wrap:wrap;align-items:center;gap:var(--s1) var(--s3);padding:var(--s2) 0}
+.logo{color:#fff;text-decoration:none;font-weight:900;font-size:20px;line-height:1.35}
+.header-tel{margin-left:auto;color:#fff;text-decoration:none;display:flex;flex-direction:column;line-height:1.3;text-align:right}
+.header-tel-label{font-size:12px;font-weight:700;color:#FDBA74}
+.header-tel .num{font-size:22px}
+.gnav{width:100%;order:3;border-top:1px solid rgba(255,255,255,.25)}
+.gnav ul{display:flex;flex-wrap:wrap;gap:0 var(--s3)}
+.gnav a{display:inline-flex;align-items:center;min-height:44px;color:#fff;text-decoration:none;font-weight:700;font-size:14px}
+.gnav a:hover{text-decoration:underline;text-underline-offset:4px}
+
+/* ボタン */
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:var(--s1);min-height:52px;padding:var(--s1) var(--s3);font-weight:900;font-size:16px;text-decoration:none;border:2px solid transparent;line-height:1.35;text-align:center}
+.btn-lg{min-height:60px;font-size:18px;padding:var(--s1) var(--s4)}
+.btn-xl{min-height:64px;font-size:20px;padding:var(--s1) var(--s5)}
+.btn-cta{background:var(--cta);color:#fff;border-color:var(--cta)}
+.btn-cta:hover{background:var(--cta-d);border-color:var(--cta-d)}
+.btn-light{background:#fff;color:var(--main);border-color:#fff}
+.btn-outline{background:transparent;color:var(--main);border-color:var(--main);font-weight:700}
+.btn-outline:hover{background:var(--panel)}
+.btn-row{display:flex;flex-wrap:wrap;gap:var(--s2);margin-top:var(--s3)}
+.btn-row-left{justify-content:flex-start}
+.btn .num{white-space:nowrap}
+
+/* ヒーロー: 左=紺パネル / 右=鍼の実写 */
+.hero{background:var(--main-d)}
+.hero-grid{display:grid;grid-template-columns:1fr}
+.hero-photo img{width:100%;height:100%;object-fit:cover;aspect-ratio:4/3}
+.hero-panel{color:#fff;padding:var(--s6) 20px;display:flex;flex-direction:column;justify-content:center}
+.hero-shop{font-weight:900;font-size:15px;color:#FDBA74;border-bottom:1px solid rgba(255,255,255,.35);padding-bottom:var(--s2)}
+.hero-panel h1{font-weight:900;font-size:34px;line-height:1.45;margin-top:var(--s3)}
+.hero-lead{margin-top:var(--s2);color:#E6EDF3;max-width:34em}
+.hero-note{font-size:13px;color:#C7D3DE;margin-top:var(--s2)}
+
+/* 信頼帯: 紺地に大数字を横一列 */
+.trust{background:var(--main);color:#fff}
+.trust-list{display:grid;grid-template-columns:1fr 1fr}
+.trust-list li{padding:var(--s3) var(--s2);border-left:1px solid rgba(255,255,255,.25);border-top:1px solid rgba(255,255,255,.25);display:flex;flex-direction:column}
+.trust-list li:nth-child(odd){border-left:0}
+.trust-list li:nth-child(-n+2){border-top:0}
+.trust-num{font-size:30px;line-height:1.3}
+.trust-num small{font-size:15px;font-weight:700}
+.trust-label{font-size:13px;font-weight:700;color:#FDBA74}
+
+/* セクション見出し: 太バー+橙の下線 */
+.section{padding:var(--s8) 0}
+.section-alt{background:var(--paper)}
+.sec-title{font-weight:900;font-size:27px;line-height:1.4;color:var(--main);border-left:12px solid var(--main);border-bottom:4px solid var(--cta);padding:0 0 var(--s1) var(--s2);margin-bottom:var(--s4)}
+.sub-title{font-weight:900;font-size:21px;color:var(--main);margin:var(--s6) 0 var(--s3);border-bottom:2px solid var(--line-soft);padding-bottom:var(--s1)}
+
+/* 分割レイアウト */
+.split{display:grid;grid-template-columns:1fr;gap:var(--s4)}
+.photo img{width:100%;height:100%;object-fit:cover}
+
+/* お悩み: 番号付きカルテ行 */
+.checklist{counter-reset:ck;border-top:2px solid var(--main)}
+.checklist li{counter-increment:ck;display:grid;grid-template-columns:52px 1fr;align-items:center;min-height:54px;border-bottom:1px solid var(--line-soft);font-weight:700;font-size:17px;background:var(--paper);padding:var(--s1) var(--s2) var(--s1) 0}
+.checklist li::before{content:counter(ck,decimal-leading-zero);font-weight:900;color:var(--cta);font-variant-numeric:tabular-nums;text-align:center;font-size:18px}
+.plain-list{margin-top:var(--s3);display:grid;gap:var(--s1)}
+.plain-list li{padding-left:var(--s2);border-left:4px solid var(--main);font-size:15px;line-height:1.8}
+
+/* 特徴: 非対称グリッド(1件目を大きく) */
+.feature-grid{display:grid;grid-template-columns:1fr;gap:var(--s3)}
+.feature{background:var(--bg);border-top:6px solid var(--main);padding:var(--s3)}
+.section-alt .feature{background:var(--bg)}
+.feature img{width:100%;aspect-ratio:4/3;object-fit:cover;margin-bottom:var(--s2)}
+.feature-no{font-size:28px;color:var(--cta);line-height:1.2}
+.feature h4{font-size:18px;font-weight:900;margin:var(--s1) 0;line-height:1.5}
+.feature p{font-size:15px;line-height:1.85}
+.flow{display:flex;flex-wrap:wrap;gap:var(--s1)}
+.flow li{background:var(--main);color:#fff;font-weight:700;padding:var(--s1) var(--s2);display:flex;gap:var(--s1);align-items:center;min-height:44px}
+.flow-no{color:#FDBA74;font-size:18px}
+
+/* 情報表 */
+.info-table{width:100%;border-collapse:collapse;border-top:2px solid var(--main);background:var(--paper)}
+.info-table th,.info-table td{padding:var(--s2);border-bottom:1px solid var(--line-soft);text-align:left;vertical-align:top;line-height:1.75}
+.info-table th{width:30%;background:var(--panel);font-weight:700;white-space:nowrap}
+.info-compact th{width:18%}
+
+/* メニュー: 横長の台帳行 */
+.menu-grid{display:grid;grid-template-columns:1fr;gap:var(--s3)}
+.menu-card{background:var(--paper);border:1px solid var(--line-soft);border-left:8px solid var(--main);display:grid;grid-template-columns:1fr}
+.menu-card img{width:100%;aspect-ratio:16/9;object-fit:cover}
+.menu-body{padding:var(--s3)}
+.menu-body h3{font-size:20px;font-weight:900;line-height:1.5}
+.menu-tag{display:inline-block;background:var(--panel2);color:var(--cta-d);font-weight:700;font-size:13px;padding:2px var(--s1);margin-top:var(--s1)}
+.prices{margin-top:var(--s2);border-top:1px solid var(--line-soft)}
+.prices>div{display:grid;grid-template-columns:1fr auto;align-items:baseline;gap:var(--s2);padding:var(--s1) 0;border-bottom:1px solid var(--line-soft)}
+.prices dt{font-size:15px}
+.price{text-align:right;font-size:24px;line-height:1.3;color:var(--main);white-space:nowrap}
+.price span{font-size:14px;font-weight:700}
+.menu-note{font-size:13px;font-weight:700;color:var(--cta-d);margin-top:var(--s1)}
+.menu-other{background:var(--panel)}
+.insurance{margin-top:var(--s5);background:var(--panel2);border:2px solid var(--cta);padding:var(--s3)}
+.insurance h3{font-size:19px;font-weight:900;margin-bottom:var(--s2)}
+.insurance ul{display:grid;gap:var(--s1)}
+.insurance li{padding-left:var(--s2);border-left:4px solid var(--cta);font-size:15px;line-height:1.8}
+
+/* 営業時間マトリクス */
+.table-wrap{overflow-x:auto}
+.hours-table{width:100%;border-collapse:collapse;background:var(--paper);min-width:640px}
+.hours-table th,.hours-table td{border:1px solid var(--line-soft);padding:var(--s1);text-align:center;line-height:1.6}
+.hours-table thead th{background:var(--main);color:#fff;font-weight:900}
+.hours-table thead th.sun{color:#FCA5A5}
+.hours-table tbody th{background:var(--panel);font-size:15px;white-space:nowrap}
+.hours-table td{font-weight:900;color:var(--main);font-size:18px}
+.hours-table td.closed{color:var(--cta);font-size:15px}
+.hours-notes{margin-top:var(--s3)}
+
+/* アクセス・地図 */
+.map{margin-top:var(--s4)}
+.map iframe{width:100%;height:380px;border:2px solid var(--main);display:block}
+
+/* FAQ */
+.faq{border-top:2px solid var(--main)}
+.faq-item{border-bottom:1px solid var(--line-soft);background:var(--paper)}
+.faq-item h3{font-size:16px}
+.faq-q{width:100%;display:grid;grid-template-columns:1fr 28px;gap:var(--s2);align-items:center;text-align:left;min-height:60px;padding:var(--s2);background:none;border:0;font:inherit;font-weight:700;cursor:pointer;line-height:1.6;color:var(--ink)}
+.faq-q::after{content:"+";font-weight:900;font-size:24px;color:var(--cta);text-align:center}
+.faq-item.is-open .faq-q::after{content:"−"}
+.faq-a{display:none;padding:0 var(--s2) var(--s3);font-size:15px;line-height:1.85}
+.faq-item.is-open .faq-a{display:block}
+
+/* 予約 */
+.reserve{background:var(--main);color:#fff}
+.reserve .sec-title{color:#fff;border-left-color:#fff}
+.reserve a:not(.btn){color:#fff}
+.reserve-tel{font-size:42px;line-height:1.25;margin:var(--s2) 0}
+.reserve-tel a{color:#fff;text-decoration:none}
+.reserve .note{color:#C7D3DE}
+.reserve-sub{display:grid;grid-template-columns:1fr;gap:var(--s3);margin-top:var(--s4)}
+.reserve-sub .btn-outline{color:#fff;border-color:#fff}
+.reserve-sub .btn-outline:hover{background:rgba(255,255,255,.12)}
+
+/* デモ案内・フッター */
+.demo-note{padding:var(--s4) 0;font-size:13px;line-height:1.85;color:var(--muted)}
+.demo-note h2{font-size:15px;color:var(--ink);margin-bottom:var(--s1)}
+.site-footer{background:var(--main-d);color:#fff;padding:var(--s6) 0 calc(var(--s6) + 8px);font-size:15px;line-height:1.9}
+.footer-name{font-weight:900;font-size:20px}
+.site-footer a{color:#fff}
+.site-footer address{font-style:normal}
+.fixed-cta{position:fixed;left:0;right:0;bottom:0;z-index:20}
+.fixed-cta .btn{width:100%;min-height:60px;font-size:18px}
+
+@media (min-width:768px){
+  .hero-grid{grid-template-columns:1fr 1.15fr}
+  .hero-photo img{aspect-ratio:auto}
+  .hero-panel{padding:var(--s8) var(--s5) var(--s8) max(20px,calc((100vw - var(--container))/2))}
+  .hero-panel h1{font-size:40px}
+  .trust-list{grid-template-columns:repeat(4,1fr)}
+  .trust-list li{border-top:0}
+  .trust-list li:nth-child(odd){border-left:1px solid rgba(255,255,255,.25)}
+  .trust-list li:first-child{border-left:0}
+  .split{grid-template-columns:1fr 1fr;align-items:start}
+  .split-rev{direction:rtl}.split-rev>*{direction:ltr}
+  .checklist{grid-template-columns:1fr 1fr;display:grid;column-gap:var(--s4)}
+  .feature-grid{grid-template-columns:1fr 1fr}
+  .feature:first-child{grid-column:span 2;display:grid;grid-template-columns:1fr 1fr;gap:var(--s3);align-items:start}
+  .feature:first-child img{margin-bottom:0}
+  .menu-card{grid-template-columns:300px 1fr}
+  .menu-card img{aspect-ratio:auto;height:100%}
+  .reserve-sub{grid-template-columns:repeat(3,1fr)}
+  .reserve-tel{font-size:56px}
+}
+@media (min-width:1024px){
+  body{padding-bottom:0}
+  .section{padding:var(--s12) 0}
+  .sec-title{font-size:32px}
+  .header-inner{flex-wrap:nowrap}
+  .gnav{width:auto;order:0;border-top:0}
+  .fixed-cta{display:none}
+}
+
+/* モバイル: 営業時間マトリクスは横スクロールさせず8列を収める */
+@media (max-width:767px){
+  .hours-table{min-width:0}
+  .hours-table th,.hours-table td{padding:6px 2px;font-size:13px;line-height:1.45}
+  .hours-table tbody th{font-size:12px;white-space:normal}
+  .hours-table td{font-size:15px}
+  .reserve-tel{font-size:36px}
+  .hero-panel h1{font-size:30px}
+}
+@media (max-width:767px){
+  .trust-num{font-size:25px;white-space:nowrap}
+  .trust-num small{font-size:12px}
+}
